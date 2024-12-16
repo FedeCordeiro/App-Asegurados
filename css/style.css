@@ -1,0 +1,60 @@
+/* -------------------------- GENERAL ------------------------- */
+
+body {
+  text-align: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* --------------------------------- ERROR --------------- */
+
+.error404 {
+  background-size: cover;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+select {
+  background-color: #333;
+  color: white;
+  font-size: 20px;
+}
+
+
+/* Estilo de los labels */
+form label {
+  font-size: 1.1rem; /* Tamaño de la fuente */
+  font-weight: bold; /* Negrita */
+  color: #333; /* Color más oscuro para mayor contraste */
+}
+
+
+/* Centrar los inputs */
+form .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los inputs horizontalmente */
+  margin-bottom: 1rem; /* Espaciado entre los campos */
+}
+
+/* Estilo del contorno del formulario */
+#conteiner-formAdd .border {
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+img {
+  transition: 0.3s;
+}
+
+img:hover {
+  transition: 0.3s ease-in-out;
+  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.4);
+  transform: scale(1.1); /* Aumenta el tamaño ligeramente */
+}
+
+input {
+  text-align: center !important;
+}

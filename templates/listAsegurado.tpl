@@ -212,8 +212,14 @@
             }
 
             function filterRows() {
-                const searchValue = searchInput.value.toLowerCase();
-                filteredRows = rows.filter(row => row.innerText.toLowerCase().includes(searchValue));
+                const searchValue = searchInput.value.toLowerCase()
+            .trim(); // Convertir a minúsculas y eliminar espacios innecesarios
+                filteredRows = rows.filter(row => {
+                    // Verificar si alguno de los campos dentro de la fila contiene el valor de búsqueda
+                    const rowText = row.innerText.toLowerCase();
+                    return rowText.includes(searchValue); // Búsqueda parcial
+                });
+
                 currentPage = 1;
                 setupPagination();
                 displayRows(currentPage);

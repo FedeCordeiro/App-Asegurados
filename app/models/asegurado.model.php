@@ -35,7 +35,7 @@ class AseguradoModel
     // Editar asegurado
     public function editAsegurado($asegurado)
     {
-        $query = $this->db->prepare('UPDATE asegurado SET nombre=?, dni=?, fecha_nac=?, calle=?, numero=?, piso=?, localidad=?, marca=?, anio=?, patente=?, motor=?, chasis=? WHERE id_cliente=?');
+        $query = $this->db->prepare('UPDATE asegurado SET nombre=?, dni=?, fecha_nac=?, calle=?, numero=?, piso=?, localidad=?, marca=?, anio=?, patente=?, motor=?, chasis=?, referente=? WHERE id_cliente=?');
         $query->execute([
             $asegurado['nombre'],
             $asegurado['dni'],
@@ -49,6 +49,7 @@ class AseguradoModel
             $asegurado['patente'],
             $asegurado['motor'],
             $asegurado['chasis'],
+            $asegurado['referente'],
             $asegurado['id_cliente']
         ]);
 
@@ -63,11 +64,11 @@ class AseguradoModel
     }
 
     // Insertar un nuevo asegurado
-    public function insertAsegurado($id_cliente, $nombre, $dni, $fecha_nac, $calle, $numero, $piso, $localidad, $marca, $anio, $patente, $motor, $chasis)
+    public function insertAsegurado($id_cliente, $nombre, $dni, $fecha_nac, $calle, $numero, $piso, $localidad, $marca, $anio, $patente, $motor, $chasis, $referente)
     {
         // Insertamos el nuevo asegurado sin verificar duplicación de DNI
-        $query = $this->db->prepare("INSERT INTO asegurado (id_cliente, nombre, dni, fecha_nac, calle, numero, piso, localidad, marca, anio, patente, motor, chasis) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
-        $query->execute([$id_cliente, $nombre, $dni, $fecha_nac, $calle, $numero, $piso, $localidad, $marca, $anio, $patente, $motor, $chasis]);
+        $query = $this->db->prepare("INSERT INTO asegurado (id_cliente, nombre, dni, fecha_nac, calle, numero, piso, localidad, marca, anio, patente, motor, chasis, referente) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $query->execute([$id_cliente, $nombre, $dni, $fecha_nac, $calle, $numero, $piso, $localidad, $marca, $anio, $patente, $motor, $chasis, $referente]);
 
         return $this->db->lastInsertId();
     }

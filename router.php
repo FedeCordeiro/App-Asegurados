@@ -57,6 +57,9 @@ switch ($params[0]) {
     case 'logout':
         $userController->logout();
         break;
+    case 'exportar':
+        $aseguradoController->exportDatabase();
+        break;
     default:
         require("templates/error404.tpl");
         break;

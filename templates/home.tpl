@@ -24,4 +24,8 @@
             <span class="fst-italic">Seguros Generales</span>
         </h3>
     </div>
+
+    <form action="exportar" method="POST">
+        <button type="submit" class="btn btn-primary mt-2">COPIA DE SEGURIDAD</button>
+    </form>
 </body>
